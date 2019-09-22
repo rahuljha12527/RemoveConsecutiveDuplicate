@@ -1,0 +1,36 @@
+
+#include<cstring>
+#include <iostream>
+
+using namespace std;
+
+
+void removeConsecutiveDuplicates(char input[]) {
+    // Write your code here
+  int n=strlen(input);
+    
+    if(n<2)
+        return;
+    
+    int j=0;
+    
+    for(int i=1;i<n;i++){
+        
+        if(input[i]!=input[j]){
+            j++;
+            input[j]=input[i];
+            
+        }
+        
+    }
+    j++;
+    input[j]='\0';
+
+}
+
+int main() {
+    char input[1000];
+    cin.getline(input, 1000);
+    removeConsecutiveDuplicates(input);
+    cout << input << endl;
+}
